@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مفاجأة ليارا</title>
+    <style>
+        body {
+            background-color: #fff0f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+        }
+        img { 
+            width: 100%; 
+            max-width: 250px; 
+            height: auto; 
+            border-radius: 15px; 
+            margin-bottom: 15px; 
+        }
+        h1 { color: #ff4d94; font-size: 22px; margin-bottom: 20px; }
+        p { color: #444; line-height: 1.8; font-size: 16px; white-space: pre-line; text-align: justify; }
+        button {
+            background-color: #ff4d94;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: 0.3s;
+        }
+        button:hover { transform: scale(1.05); background-color: #ff1a75; }
+        .hidden { display: none; }
+        .final-msg { font-weight: 500; color: #333; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="step1">
+        <img src="IMG_0297.jpeg">
+        <h1>يارا.. عندي الك سؤال بجنن!</h1>
+        <button onclick="nextStep(2)">شُـو هو؟ احكي</button>
+    </div>
+
+    <div id="step2" class="hidden">
+        <img src="IMG_0298.jpeg">
+        <h1>بتحبيني ولا لأ؟ 😉</h1>
+        <button onclick="nextStep(3)">أكييييد بحبك</button>
+        <button onclick="alert('ما في خيار لأ.. جربي مرة تانية 😂')">لأ ما بحبك</button>
+    </div>
+
+    <div id="step3" class="hidden">
+        <img src="IMG_0299.jpeg">
+        <h1>يا ويلي محلاكي! ❤️</h1>
+        <p style="text-align: center;">والله إنك بتجنني وكل الكلام ما بيوصف جمال قلبك.</p>
+        <button onclick="nextStep(4)">لسا في كمان ما خلصنا 😉</button>
+    </div>
+
+    <div id="step4" class="hidden">
+        <img src="IMG_0301.png" style="max-width: 300px; border: 3px solid #ff4d94;">
+        <p class="final-msg">
+            حبي يارا عارف انو مش حلوة هاي الطريقة اني أوصلك هاض الكلام بس ما لقيت غيرها حابب احكي هاض الكلام عشان رح ادخل معك انتي سنة جديدة اوكييي ناخذ نفسس😤
+            يارا انتي اهم و أغلى حد بحياتي و مستحيل استغني عنو و ما بكمل يومي بدونك مستحيل حتى يكمل بدونك انتي حرفيا يلي كملتي حياتي و خليتي إلها معنى انتي القطعة يلي كانت ناقصة بحياتي و لقيتك و مستحيل أتركك لأنو أنا بدونك ولاشي بحبك و رح أضل احبك دايما رح ندخل سنة جديدة مع بعض و زي ما كانت النص سنة يلي قضيناها مع بعض حلوة هاي السنة الجديدة رح تكون احلا و احلا لأنو معك كلشي حلو و إلو معنى انتي قلبي و روحي و حياتي تعلقت فيكي كثير وأنا حرفيا بس متخيل مستقبلي معك بيت و أنا و اياكي فيه منعيش حياتنا مبسوطين بحبك يا احلا شي عندي بالدنيا
+        </p>
+        
+        <audio id="bgMusic" loop>
+            <source src="The Marías - No One Not.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+<script>
+    function nextStep(step) {
+        document.getElementById('step1').classList.add('hidden');
+        document.getElementById('step2').classList.add('hidden');
+        document.getElementById('step3').classList.add('hidden');
+        document.getElementById('step4').classList.add('hidden');
+        
+        document.getElementById('step' + step).classList.remove('hidden');
+
+        if(step === 4) {
+            var audio = document.getElementById('bgMusic');
+            audio.play();
+        }
+    }
+</script>
+
+</body>
+</html>
